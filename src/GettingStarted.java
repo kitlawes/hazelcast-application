@@ -4,6 +4,7 @@ import com.hazelcast.core.HazelcastInstance;
 
 import java.util.Map;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class GettingStarted {
 
@@ -25,5 +26,11 @@ public class GettingStarted {
         System.out.println("First customer: " + queueCustomers.poll());
         System.out.println("Second customer: "+ queueCustomers.peek());
         System.out.println("Queue size: " + queueCustomers.size());
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            String queueName = scanner.next();
+            instance.getQueue(queueName);
+        }
     }
 }
